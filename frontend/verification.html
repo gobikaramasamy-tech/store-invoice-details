@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Invoice Verification - AI Invoice Checker</title>
+
+    <link rel="stylesheet" href="../css/verification.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="top-header">
+
+        <div class="logo">
+            <i class="fa-solid fa-file-invoice"></i>
+            AI Invoice Checker
+        </div>
+
+        <a href="dashboard.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Dashboard
+        </a>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="verification-container">
+
+        <!-- PAGE TITLE -->
+
+        <div class="page-title">
+
+            <h1>AI Invoice Verification</h1>
+
+            <p>
+                Our system has analyzed the invoice. Review the verification results below.
+            </p>
+
+        </div>
+
+
+        <!-- INVOICE NAME -->
+
+        <div class="invoice-header-card">
+
+            <div class="invoice-icon">
+                <i class="fa-solid fa-file-invoice"></i>
+            </div>
+
+            <div class="invoice-info">
+
+                <h2 id="invoiceName">
+                    Invoice
+                </h2>
+
+                <p id="invoiceNumber">
+                    Invoice Number: -
+                </p>
+
+            </div>
+
+            <div class="status-badge" id="finalStatusBadge">
+                Processing
+            </div>
+
+        </div>
+
+
+        <!-- VERIFICATION RESULTS -->
+
+        <section class="verification-card">
+
+            <div class="section-heading">
+
+                <h2>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Verification Results
+                </h2>
+
+                <p>
+                    Automated checks performed on your invoice.
+                </p>
+
+            </div>
+
+
+            <!-- OCR ACCURACY -->
+
+            <div class="result-row">
+
+                <div class="result-left">
+
+                    <div class="result-icon blue">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+
+                    <div>
+                        <h3>OCR Accuracy</h3>
+                        <p>Accuracy of extracted invoice information</p>
+                    </div>
+
+                </div>
+
+                <div class="result-value">
+
+                    <strong id="ocrAccuracy">
+                        96%
+                    </strong>
+
+                    <span class="good">
+                        High Accuracy
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DUPLICATE PROBABILITY -->
+
+            <div class="result-row">
+
+                <div class="result-left">
+
+                    <div class="result-icon orange">
+                        <i class="fa-solid fa-copy"></i>
+                    </div>
+
+                    <div>
+                        <h3>Duplicate Probability</h3>
+                        <p>Probability that this invoice already exists</p>
+                    </div>
+
+                </div>
+
+                <div class="result-value">
+
+                    <strong id="duplicateProbability">
+                        12%
+                    </strong>
+
+                    <span class="good">
+                        Low Risk
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CALCULATION STATUS -->
+
+            <div class="result-row">
+
+                <div class="result-left">
+
+                    <div class="result-icon green">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+
+                    <div>
+                        <h3>Calculation Status</h3>
+                        <p>Subtotal, tax, discount and total verification</p>
+                    </div>
+
+                </div>
+
+                <div class="result-value">
+
+                    <strong class="success-text" id="calculationStatus">
+                        Correct
+                    </strong>
+
+                    <span class="success-label">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Verified
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- DUPLICATE STATUS -->
+
+            <div class="result-row">
+
+                <div class="result-left">
+
+                    <div class="result-icon purple">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <h3>Duplicate Status</h3>
+                        <p>Comparison with previously saved invoices</p>
+                    </div>
+
+                </div>
+
+                <div class="result-value">
+
+                    <strong class="success-text" id="duplicateStatus">
+                        No Duplicate
+                    </strong>
+
+                    <span class="success-label">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Clear
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECOMMENDATION -->
+
+        <section class="recommendation-card" id="recommendationCard">
+
+            <div class="recommendation-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div class="recommendation-content">
+
+                <span>AI Recommendation</span>
+
+                <h2 id="recommendation">
+                    VALID INVOICE
+                </h2>
+
+                <p id="recommendationText">
+                    The invoice passed the verification checks and appears to be valid.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="action-buttons">
+
+            <a href="invoice-preview.html" class="secondary-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Preview
+
+            </a>
+
+
+            <button id="saveInvoice" class="primary-btn">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Invoice
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/verification.js"></script>
+
+</body>
+
+</html>

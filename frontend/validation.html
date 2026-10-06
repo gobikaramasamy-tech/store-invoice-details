@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Invoice Validation | AI Invoice Checker</title>
+
+    <link rel="stylesheet"
+          href="../css/validation.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="top-header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-file-invoice"></i>
+            </div>
+
+            <div>
+                <h2>AI Invoice</h2>
+                <span>Checker</span>
+            </div>
+
+        </div>
+
+        <a href="invoice-preview.html"
+           class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Preview
+
+        </a>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="validation-container">
+
+        <!-- TITLE -->
+
+        <section class="page-title">
+
+            <h1>Invoice Validation</h1>
+
+            <p>
+                AI-powered verification of your invoice.
+            </p>
+
+        </section>
+
+
+        <!-- INVOICE INFORMATION -->
+
+        <section class="invoice-card">
+
+            <div class="invoice-icon">
+
+                <i class="fa-solid fa-file-invoice"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="invoiceName">
+                    Invoice
+                </h2>
+
+                <p>
+                    Invoice Number:
+                    <strong id="invoiceNumber">-</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- VALIDATION RESULTS -->
+
+        <section class="results-grid">
+
+
+            <!-- DUPLICATE CHECK -->
+
+            <div class="result-card">
+
+                <div class="result-icon">
+                    <i class="fa-solid fa-copy"></i>
+                </div>
+
+                <div class="result-content">
+
+                    <span>Duplicate Check</span>
+
+                    <strong id="duplicateStatus">
+                        Checking...
+                    </strong>
+
+                    <p id="duplicateProbability">
+                        Please wait
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CALCULATION CHECK -->
+
+            <div class="result-card">
+
+                <div class="result-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <div class="result-content">
+
+                    <span>Calculation Check</span>
+
+                    <strong id="calculationStatus">
+                        Checking...
+                    </strong>
+
+                    <p>
+                        Subtotal + Tax - Discount
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- OCR -->
+
+            <div class="result-card">
+
+                <div class="result-icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <div class="result-content">
+
+                    <span>OCR Accuracy</span>
+
+                    <strong id="ocrAccuracy">
+                        --%
+                    </strong>
+
+                    <p>
+                        Extraction confidence
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FINAL STATUS -->
+
+            <div class="result-card">
+
+                <div class="result-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div class="result-content">
+
+                    <span>Invoice Status</span>
+
+                    <strong id="invoiceStatus">
+                        Checking...
+                    </strong>
+
+                    <p id="recommendation">
+                        AI is checking your invoice
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AMOUNT VERIFICATION -->
+
+        <section class="details-card">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Amount Verification</h2>
+
+                    <p>
+                        Verify the invoice calculation.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="amount-grid">
+
+
+                <div class="amount-item">
+
+                    <span>Subtotal</span>
+
+                    <strong id="subtotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="operator">
+                    +
+                </div>
+
+
+                <div class="amount-item">
+
+                    <span>Tax</span>
+
+                    <strong id="tax">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="operator">
+                    -
+                </div>
+
+
+                <div class="amount-item">
+
+                    <span>Discount</span>
+
+                    <strong id="discount">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="operator">
+                    =
+                </div>
+
+
+                <div class="amount-item total">
+
+                    <span>Expected Total</span>
+
+                    <strong id="expectedTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <div class="amount-item total">
+
+                    <span>Invoice Total</span>
+
+                    <strong id="invoiceTotal">
+                        ₹0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL MESSAGE -->
+
+        <section class="final-result">
+
+            <div class="final-icon">
+
+                <i class="fa-solid fa-robot"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="finalTitle">
+                    Validation Complete
+                </h2>
+
+                <p id="finalMessage">
+                    Your invoice has been checked by the AI
+                    Invoice Checker.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="action-buttons">
+
+    <button id="saveInvoiceBtn"
+            class="primary-btn">
+
+        <i class="fa-solid fa-floppy-disk"></i>
+
+        Save Invoice
+
+    </button>
+
+
+    <a href="history.html"
+       class="secondary-btn">
+
+        <i class="fa-solid fa-clock-rotate-left"></i>
+
+        View History
+
+    </a>
+
+
+    <a href="reports.html"
+       class="primary-btn">
+
+        View Report
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
+    </main>
+
+
+    <script src="../js/validation.js"></script>
+
+</body>
+
+</html>

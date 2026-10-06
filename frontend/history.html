@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Invoice History | AI Invoice Checker</title>
+
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- History CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/history.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-file-invoice"></i>
+
+            </div>
+
+
+            <div>
+
+                <h2>AI Invoice</h2>
+
+                <span>Checker</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="sidebar-nav">
+
+
+            <a href="dashboard.html">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="upload.html">
+
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                <span>Upload Invoice</span>
+
+            </a>
+
+
+            <a href="history.html"
+               class="active">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>History</span>
+
+            </a>
+
+
+            <a href="reports.html">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                <span>Reports</span>
+
+            </a>
+
+
+            <a href="profile.html">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+        </nav>
+
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <a href="#"
+               id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             PAGE HEADER
+        ================================================== -->
+
+        <header class="page-header">
+
+
+            <div>
+
+                <h1>
+                    Invoice History
+                </h1>
+
+
+                <p>
+                    View and manage your previously checked invoices.
+                </p>
+
+            </div>
+
+
+
+            <!-- UPLOAD BUTTON -->
+
+            <a
+                href="upload.html"
+                class="upload-btn"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Upload Invoice
+
+            </a>
+
+        </header>
+
+
+
+        <!-- =================================================
+             SUMMARY CARDS
+        ================================================== -->
+
+        <section class="summary-grid">
+
+
+            <!-- TOTAL -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Total Invoices
+                    </span>
+
+                    <strong id="totalInvoices">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VALID -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Valid
+                    </span>
+
+                    <strong id="validInvoices">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DUPLICATE -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-copy"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Duplicates
+                    </span>
+
+                    <strong id="duplicateInvoices">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- REVIEW -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Needs Review
+                    </span>
+
+                    <strong id="reviewInvoices">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HISTORY CARD
+        ================================================== -->
+
+        <section class="history-card">
+
+
+            <!-- HEADER -->
+
+            <div class="history-header">
+
+                <div>
+
+                    <h2>
+                        All Invoices
+                    </h2>
+
+                    <p>
+                        Click an invoice name to view complete details.
+                    </p>
+
+                </div>
+
+
+                <!-- REFRESH -->
+
+                <button
+                    type="button"
+                    class="refresh-btn"
+                    id="refreshBtn"
+                    title="Refresh invoices"
+                >
+
+                    <i class="fa-solid fa-rotate"></i>
+
+                    Refresh
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 TABLE
+            ================================================== -->
+
+            <div class="table-container">
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Invoice
+                            </th>
+
+                            <th>
+                                Vendor
+                            </th>
+
+                            <th>
+                                Upload Date
+                            </th>
+
+                            <th>
+                                Amount
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <tbody id="historyTableBody">
+
+                        <!--
+                            JavaScript loads invoices
+                            from MongoDB here.
+                        -->
+
+                    </tbody>
+
+
+                </table>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EMPTY STATE
+            ================================================== -->
+
+            <div
+                id="emptyState"
+                class="empty-state"
+                style="display: none;"
+            >
+
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                </div>
+
+
+                <h3>
+                    No invoices found
+                </h3>
+
+
+                <p>
+                    Upload and check an invoice to see it here.
+                </p>
+
+
+                <a
+                    href="upload.html"
+                    class="empty-btn"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Upload Invoice
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 LOADING STATE
+            ================================================== -->
+
+            <div
+                id="loadingState"
+                class="loading-state"
+            >
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <span>
+                    Loading invoices...
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         HISTORY JAVASCRIPT
+    ====================================================== -->
+
+    <script src="../js/history.js"></script>
+
+
+</body>
+
+</html>

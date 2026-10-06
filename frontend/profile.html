@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | AI Invoice Checker</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-file-invoice"></i>
+            </div>
+
+            <div>
+                <h2>AI Invoice</h2>
+                <span>Checker</span>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a href="upload.html">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Invoice</span>
+            </a>
+
+
+            <a href="history.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+            </a>
+
+
+            <a href="reports.html">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Reports</span>
+            </a>
+
+
+            <a href="profile.html" class="active">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <a href="#" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- Page Header -->
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Profile</h1>
+
+                <p>
+                    Manage your account information
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PROFILE LAYOUT
+        ========================== -->
+
+        <section class="profile-layout">
+
+
+            <!-- =========================
+                 PROFILE CARD
+            ========================== -->
+
+            <div class="profile-card">
+
+                <div class="profile-top">
+
+                    <div class="profile-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <h2 id="profileName">
+                        User
+                    </h2>
+
+
+                    <p id="profileEmail">
+                        user@example.com
+                    </p>
+
+
+                    <span class="active-badge">
+
+                        <span></span>
+
+                        Active Account
+
+                    </span>
+
+                </div>
+
+
+                <div class="profile-actions">
+
+                    <button
+                        type="button"
+                        class="edit-btn"
+                        id="editProfileBtn"
+                    >
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        Edit Profile
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="password-btn"
+                        id="changePasswordBtn"
+                    >
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        Change Password
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 PERSONAL INFORMATION
+            ========================== -->
+
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon blue">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>Personal Information</h3>
+
+                        <p>
+                            Your basic account information
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-grid">
+
+
+                    <!-- Full Name -->
+
+                    <div class="info-item">
+
+                        <span>Full Name</span>
+
+                        <strong id="fullName">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="info-item">
+
+                        <span>Email Address</span>
+
+                        <strong id="emailAddress">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="info-item">
+
+                        <span>Phone Number</span>
+
+                        <strong id="phoneNumber">
+                            Not provided
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Company -->
+
+                    <div class="info-item">
+
+                        <span>Company</span>
+
+                        <strong id="companyName">
+                            Not provided
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Role -->
+
+                    <div class="info-item">
+
+                        <span>Role</span>
+
+                        <strong id="userRole">
+                            Invoice User
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Account Type -->
+
+                    <div class="info-item">
+
+                        <span>Account Type</span>
+
+                        <strong>
+                            Standard User
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 ACCOUNT INFORMATION
+            ========================== -->
+
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon green">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>Account Information</h3>
+
+                        <p>
+                            Details about your AI Invoice Checker account
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="account-list">
+
+
+                    <div class="account-row">
+
+                        <div class="account-left">
+
+                            <div class="small-icon">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Account Status</strong>
+
+                                <span>
+                                    Your account is active
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <span class="status-active">
+                            Active
+                        </span>
+
+                    </div>
+
+
+                    <div class="account-row">
+
+                        <div class="account-left">
+
+                            <div class="small-icon">
+
+                                <i class="fa-solid fa-calendar"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Member Since</strong>
+
+                                <span>
+                                    Your account registration date
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <strong id="memberSince">
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-row">
+
+                        <div class="account-left">
+
+                            <div class="small-icon">
+
+                                <i class="fa-solid fa-file-invoice"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Invoices Processed</strong>
+
+                                <span>
+                                    Total invoices saved in the system
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <strong id="invoiceCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SECURITY
+            ========================== -->
+
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <div class="card-icon purple">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>Security</h3>
+
+                        <p>
+                            Manage your account security
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-list">
+
+
+                    <button
+                        type="button"
+                        class="security-row"
+                        id="securityPasswordBtn"
+                    >
+
+                        <div class="security-left">
+
+                            <div class="security-icon">
+
+                                <i class="fa-solid fa-key"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Change Password</strong>
+
+                                <span>
+                                    Update your account password
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="security-row"
+                        id="logoutSecurityBtn"
+                    >
+
+                        <div class="security-left">
+
+                            <div class="security-icon logout-icon">
+
+                                <i class="fa-solid fa-right-from-bracket"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>Logout</strong>
+
+                                <span>
+                                    Sign out of your account
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <i class="fa-solid fa-chevron-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         EDIT PROFILE MODAL
+    ========================== -->
+
+    <div
+        id="editModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h3>Edit Profile</h3>
+
+                    <p>
+                        Update your personal information
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-btn"
+                    id="closeEditModal"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+
+            <form id="editProfileForm">
+
+
+                <div class="form-group">
+
+                    <label for="editName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="editEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="editEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="editPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="editPhone"
+                        placeholder="Enter phone number"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="editCompany">
+                        Company
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editCompany"
+                        placeholder="Enter company name"
+                    >
+
+                </div>
+
+
+                <div class="modal-buttons">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelEdit"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        Save Changes
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CHANGE PASSWORD MODAL
+    ========================== -->
+
+    <div
+        id="passwordModal"
+        class="modal"
+    >
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h3>Change Password</h3>
+
+                    <p>
+                        Update your account password
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="close-btn"
+                    id="closePasswordModal"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <form id="passwordForm">
+
+
+                <div class="form-group">
+
+                    <label for="currentPassword">
+                        Current Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="currentPassword"
+                        placeholder="Enter current password"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="newPassword">
+                        New Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="Enter new password"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm new password"
+                        required
+                    >
+
+                </div>
+
+
+                <div
+                    id="passwordMessage"
+                    class="password-message"
+                ></div>
+
+
+                <div class="modal-buttons">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelPassword"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        Update Password
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script src="../js/profile.js"></script>
+
+</body>
+
+</html>

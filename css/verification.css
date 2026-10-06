@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.top-header {
+    height: 70px;
+
+    background: white;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+}
+
+.logo {
+    color: #2563eb;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+.back-btn {
+    text-decoration: none;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.back-btn i {
+    margin-right: 6px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.verification-container {
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title {
+    margin-bottom: 25px;
+}
+
+.page-title h1 {
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.page-title p {
+    color: #6b7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   INVOICE HEADER
+========================= */
+
+.invoice-header-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.invoice-icon {
+    width: 50px;
+
+    height: 50px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.invoice-info {
+    flex: 1;
+}
+
+.invoice-info h2 {
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.invoice-info p {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* STATUS */
+
+.status-badge {
+    background: #ecfdf5;
+
+    color: #059669;
+
+    border-radius: 20px;
+
+    padding: 8px 14px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   VERIFICATION CARD
+========================= */
+
+.verification-card {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    margin-bottom: 5px;
+}
+
+.section-heading h2 {
+    font-size: 19px;
+
+    margin-bottom: 6px;
+}
+
+.section-heading h2 i {
+    color: #2563eb;
+
+    margin-right: 7px;
+}
+
+.section-heading p {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESULT ROW
+========================= */
+
+.result-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.result-row:last-child {
+    border-bottom: none;
+}
+
+.result-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.result-icon {
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 17px;
+}
+
+.result-icon.blue {
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+.result-icon.orange {
+    background: #fff7ed;
+
+    color: #ea580c;
+}
+
+.result-icon.green {
+    background: #ecfdf5;
+
+    color: #059669;
+}
+
+.result-icon.purple {
+    background: #f5f3ff;
+
+    color: #7c3aed;
+}
+
+.result-left h3 {
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.result-left p {
+    color: #9ca3af;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESULT VALUE
+========================= */
+
+.result-value {
+    text-align: right;
+}
+
+.result-value strong {
+    display: block;
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.result-value .good {
+    color: #059669;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+.success-text {
+    color: #059669;
+}
+
+.success-label {
+    color: #059669;
+
+    font-size: 11px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   RECOMMENDATION
+========================= */
+
+.recommendation-card {
+    background: #ecfdf5;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.recommendation-icon {
+    width: 48px;
+
+    height: 48px;
+
+    background: #d1fae5;
+
+    color: #059669;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+.recommendation-content span {
+    color: #047857;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+}
+
+.recommendation-content h2 {
+    color: #047857;
+
+    font-size: 20px;
+
+    margin: 4px 0;
+}
+
+.recommendation-content p {
+    color: #065f46;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-buttons {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.secondary-btn,
+.primary-btn {
+    height: 45px;
+
+    padding: 0 20px;
+
+    border-radius: 7px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.secondary-btn {
+    background: white;
+
+    border: 1px solid #d1d5db;
+
+    color: #374151;
+
+    text-decoration: none;
+}
+
+.secondary-btn:hover {
+    background: #f9fafb;
+}
+
+.primary-btn {
+    background: #2563eb;
+
+    border: none;
+
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .top-header {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .verification-container {
+        margin-top: 25px;
+    }
+
+    .page-title h1 {
+        font-size: 25px;
+    }
+
+    .invoice-header-card {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+    .status-badge {
+        margin-left: 65px;
+    }
+
+    .result-row {
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .result-left p {
+        max-width: 190px;
+    }
+
+    .result-value {
+        min-width: 80px;
+    }
+
+    .recommendation-card {
+        align-items: flex-start;
+    }
+
+    .action-buttons {
+        flex-direction: column-reverse;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | AI Invoice Checker</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Reports CSS -->
+    <link rel="stylesheet" href="../css/reports.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-file-invoice"></i>
+            </div>
+
+            <div>
+                <h2>AI Invoice</h2>
+                <span>Checker</span>
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a href="upload.html">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <span>Upload Invoice</span>
+            </a>
+
+
+            <a href="history.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>History</span>
+            </a>
+
+
+            <a href="reports.html" class="active">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Reports</span>
+            </a>
+
+
+            <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <!-- Logout -->
+
+        <div class="sidebar-bottom">
+
+            <a href="#" id="logoutBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+
+        <!-- Header -->
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Reports</h1>
+
+                <p>
+                    Overview of your invoice verification activity
+                </p>
+
+            </div>
+
+
+            <a href="upload.html" class="upload-btn">
+
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                Upload Invoice
+
+            </a>
+
+        </header>
+
+
+        <!-- =========================
+             SUMMARY CARDS
+        ========================== -->
+
+        <section class="summary-grid">
+
+
+            <!-- Total -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon blue">
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Total Invoices</span>
+
+                    <h2 id="totalInvoices">0</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Valid -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon green">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Valid Invoices</span>
+
+                    <h2 id="validInvoices">0</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Duplicate -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon red">
+
+                    <i class="fa-solid fa-copy"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Duplicates</span>
+
+                    <h2 id="duplicateInvoices">0</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- Review -->
+
+            <div class="summary-card">
+
+                <div class="summary-icon orange">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                </div>
+
+                <div>
+
+                    <span>Needs Review</span>
+
+                    <h2 id="reviewInvoices">0</h2>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             REPORT GRID
+        ========================== -->
+
+        <section class="report-grid">
+
+
+            <!-- =========================
+                 STATUS REPORT
+            ========================== -->
+
+            <div class="report-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Invoice Status</h3>
+
+                        <p>
+                            Distribution of verified invoices
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </div>
+
+
+                <div class="status-report">
+
+
+                    <!-- Valid -->
+
+                    <div class="status-row">
+
+                        <div class="status-info">
+
+                            <span class="status-dot valid-dot"></span>
+
+                            <span>Valid</span>
+
+                        </div>
+
+                        <strong id="validPercentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="status-progress">
+
+                        <div
+                            id="validBar"
+                            class="bar valid-bar"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- Duplicate -->
+
+                    <div class="status-row">
+
+                        <div class="status-info">
+
+                            <span class="status-dot duplicate-dot"></span>
+
+                            <span>Duplicate</span>
+
+                        </div>
+
+                        <strong id="duplicatePercentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="status-progress">
+
+                        <div
+                            id="duplicateBar"
+                            class="bar duplicate-bar"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- Review -->
+
+                    <div class="status-row">
+
+                        <div class="status-info">
+
+                            <span class="status-dot review-dot"></span>
+
+                            <span>Needs Review</span>
+
+                        </div>
+
+                        <strong id="reviewPercentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="status-progress">
+
+                        <div
+                            id="reviewBar"
+                            class="bar review-bar"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 FINANCIAL SUMMARY
+            ========================== -->
+
+            <div class="report-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>Financial Summary</h3>
+
+                        <p>
+                            Total invoice value
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+                </div>
+
+
+                <div class="financial-content">
+
+                    <span>Total Invoice Amount</span>
+
+                    <h2 id="totalAmount">
+                        ₹0.00
+                    </h2>
+
+
+                    <div class="financial-details">
+
+                        <div>
+
+                            <span>Average Invoice</span>
+
+                            <strong id="averageAmount">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>Highest Invoice</span>
+
+                            <strong id="highestAmount">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RECENT INVOICES
+        ========================== -->
+
+        <section class="recent-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>Recent Invoice Activity</h3>
+
+                    <p>
+                        Latest invoices processed by the system
+                    </p>
+
+                </div>
+
+
+                <a href="history.html" class="view-all">
+                    View All
+                </a>
+
+            </div>
+
+
+            <!-- Table -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Invoice</th>
+
+                            <th>Vendor</th>
+
+                            <th>Date</th>
+
+                            <th>Amount</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="recentTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Empty State -->
+
+            <div
+                id="emptyState"
+                class="empty-state"
+            >
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-file-invoice"></i>
+
+                </div>
+
+                <h3>No invoices yet</h3>
+
+                <p>
+                    Upload your first invoice to generate reports.
+                </p>
+
+                <a href="upload.html">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    Upload Invoice
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- JavaScript -->
+
+    <script src="../js/reports.js"></script>
+
+</body>
+
+</html>

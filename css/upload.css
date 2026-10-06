@@ -1,0 +1,309 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+
+/* HEADER */
+
+.top-header {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.back-btn i {
+    margin-right: 6px;
+}
+
+
+/* MAIN */
+
+.upload-container {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+
+/* TITLE */
+
+.page-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-title h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.page-title p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+
+/* CARD */
+
+.upload-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+
+/* ICON */
+
+.upload-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    background: #eff6ff;
+    color: #2563eb;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.upload-card h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.upload-card > p {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+
+/* DROP AREA */
+
+.drop-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+
+    padding: 35px 20px;
+
+    transition: 0.2s;
+
+    background: #fafafa;
+}
+
+.drop-area:hover {
+    border-color: #2563eb;
+    background: #f8fbff;
+}
+
+.drop-area.dragover {
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.drop-area > i {
+    font-size: 32px;
+    color: #2563eb;
+    margin-bottom: 12px;
+}
+
+.drop-area p {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.drop-area span {
+    display: block;
+    color: #9ca3af;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+
+/* CHOOSE BUTTON */
+
+.choose-btn {
+    display: inline-block;
+
+    background: #2563eb;
+    color: white;
+
+    padding: 11px 22px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.choose-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* SELECTED FILE */
+
+.selected-file {
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+
+    align-items: center;
+    justify-content: space-between;
+
+    background: #f9fafb;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-align: left;
+}
+
+.file-info > i {
+    font-size: 24px;
+    color: #2563eb;
+}
+
+.file-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.file-info span {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+/* REMOVE */
+
+.remove-btn {
+    border: none;
+    background: transparent;
+
+    color: #ef4444;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* CHECK BUTTON */
+
+.check-btn {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.check-btn:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.check-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
+
+
+/* SUPPORTED TEXT */
+
+.supported {
+    margin-top: 15px;
+
+    font-size: 12px;
+
+    color: #9ca3af;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .top-header {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .upload-container {
+        margin-top: 30px;
+    }
+
+    .upload-card {
+        padding: 25px 18px;
+    }
+
+    .page-title h1 {
+        font-size: 25px;
+    }
+}
